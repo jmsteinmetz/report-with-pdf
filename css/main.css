@@ -1,0 +1,198 @@
+/* Fonts */
+
+@font-face {
+    font-family: 'proximanovalight';
+    src: url('/fonts/proximanova-light-webfont.eot');
+    src: url('/fonts/proximanova-light-webfont.eot?#iefix') format('embedded-opentype'), url('/fonts/proximanova-light-webfont.woff') format('woff'), url('/fonts/proximanova-light-webfont.ttf') format('truetype'), url('/fonts/proximanova-light-webfont.svg#webfont') format('svg');
+}
+
+@font-face {
+    font-family: 'proximanovareg';
+    src: url('/fonts/proximanova-reg-webfont.eot');
+    src: url('/fonts/proximanova-reg-webfont.eot?#iefix') format('embedded-opentype'), url('/fonts/proximanova-reg-webfont.woff') format('woff'), url('/fonts/proximanova-reg-webfont.ttf') format('truetype'), url('/fonts/proximanova-reg-webfont.svg#webfont') format('svg');
+}
+
+
+/* End Fonts */
+
+body {
+    font-family: 'proximanovareg';
+}
+
+
+/* Header */
+
+.header {
+    height: 50px;
+    max-height: 50px;
+    background-image: url('/img/background.png');
+    background-repeat: repeat-x;
+}
+
+.header img.logo {
+    position: relative;
+    top: 7px;
+    left: -5px;
+}
+
+.thelogo {
+    padding-left: 0;
+}
+
+
+/* End Header */
+
+
+/* Titlebar */
+
+.titlebar {
+    padding: 17px 0px;
+    border: 0px solid #e2e2e2;
+    height: 150px;
+}
+
+.titlebar .title {
+    font-family: 'proximanovalight';
+    font-size: 34px;
+}
+
+.titlebar .download {
+    position: relative;
+    top: 15px;
+    color: #000000;
+    border: 1px solid #e2e2e2;
+    padding: 12px 17px;
+    border-radius: 8px;
+}
+
+.reportdetails {
+    padding: 12px 0px 0px;
+}
+
+.reportdetails .caption span {
+    font-size: 19px;
+    font-weight: bold;
+    color: #000000;
+}
+
+.removeleftpadding {
+    padding-left: 0px;
+}
+
+.caption {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.58);
+    font-weight: normal;
+}
+
+
+/* End Titlebar */
+
+.content.first {
+    margin-top: 0px;
+}
+
+.content {
+    margin-top: 25px;
+    padding: 0px;
+}
+
+.chart,
+.map {
+    border: 1px solid #e2e2e2;
+    padding: 20px;
+    min-height: 250px;
+}
+
+.map {
+    min-height: 500px;
+}
+
+.orderedList {
+    font-size: 20px;
+    margin-top: 15px;
+    display: inline-block;
+}
+
+.orderedList span {
+    font-size: 25px
+}
+
+.orderedList .item {
+    line-height: normal;
+}
+
+.orderedList .photo {
+    margin-right: 0px;
+    padding-right: 0px
+}
+
+.orderedList .photo img {
+    width: 85%;
+}
+
+.stars {
+    margin: 6px 10px 0 0;
+    background-image: url('/img/stars.png');
+    background-repeat: repeat-x;
+    height: 14px;
+    width: 70px;
+    background-size: contain;
+}
+
+.stars .reviewct {
+    font-size: 13px;
+    float: right;
+    position: relative;
+    left: 38px;
+}
+
+.pie-legend {
+    list-style-type: none;
+    width: 220px;
+    margin: 0 auto;
+}
+
+.chart-legend li {
+    float: left;
+    margin-right: 20px;
+}
+
+.chart-legend li span {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-right: 5px;
+}
+
+.location {
+    margin-top: 35px;
+}
+
+.panel-heading {
+    text-align: center;
+    font-size: 20px;
+}
+
+canvas {
+    padding-right: 45px;
+}
+
+.charttitle {
+    text-align: center;
+    font-size: 120%;
+}
+
+.canvasjs-chart-credit {
+    display: none;
+}
+
+
+/* Footer */
+
+.container.footer {
+    margin-top: 20px;
+}
+
+
+/* End Footer */

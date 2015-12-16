@@ -1,0 +1,81 @@
+{
+  "options": [
+    {
+      "layout": "container-fluid",
+      "copyrightText": "&copy; John Steinmetz 2015",
+      "showBorders": "yes"
+    }
+  ],
+  "sections": [
+    {
+      "div": "item-a",
+      "xs": 12,
+      "sm": 12,
+      "md": 7,
+      "lg": 7,
+      "chartType": "bar",
+      "data": "",
+      "display": "yes"
+    }, 
+    {
+      "div": "item-b",
+      "xs": 12,
+      "sm": 12,
+      "md": 5,
+      "lg": 5,
+      "chartType": "pie",
+      "data": "",
+      "display": "yes"
+    },
+    {
+      "div": "item-c",
+      "xs": 12,
+      "sm": 12,
+      "md": 6,
+      "lg": 6,
+      "chartType": "line",
+      "data": "",
+      "display": "yes"
+    },
+    {
+      "div": "item-d",
+      "xs": 12,
+      "sm": 12,
+      "md": 6,
+      "lg": 6,
+      "chartType": "html",
+      "data": "/html/item-d.html",
+      "display": "yes"
+    },
+    {
+      "div": "item-e",
+      "xs": 12,
+      "sm": 12,
+      "md": 4,
+      "lg": 4,
+      "chartType": "bar",
+      "data": "",
+      "display": "yes"
+    },
+    {
+      "div": "item-f",
+      "xs": 12,
+      "sm": 12,
+      "md": 4,
+      "lg": 4,
+      "chartType": "doughnut",
+      "data": "",
+      "display": "yes"
+    },
+    {
+      "div": "item-g",
+      "xs": 12,
+      "sm": 12,
+      "md": 4,
+      "lg": 4,
+      "chartType": "stackedbar",
+      "data": "",
+      "display": "yes"
+    }
+  ]
+}

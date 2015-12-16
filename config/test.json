@@ -1,0 +1,31 @@
+{
+  "items": [
+    {
+      "Shoes": {
+        "value": "142K",
+        "percent": 70,
+        "color": "#69c8ce"
+      },
+      "Televisions": {
+        "value": "47K",
+        "percent": 33,
+        "color": "#69c8ce"
+      },
+      "Apparel": {
+        "value": "30K",
+        "percent": 24,
+        "color": "#69c8ce"
+      },
+      "Home & Garden": {
+        "value": "12K",
+        "percent": 15,
+        "color": "#69c8ce"
+      },
+      "Laptops": {
+        "value": "5K",
+        "percent": 10,
+        "color": "#69c8ce"
+      }
+    }
+  ]
+}
