@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>b:Reporting</title>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="/css/main.css">
+    <!-- JQuery -->
+    <script src="/js/jquery-2.1.4.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="/js/bootstrap.min.js"></script>
+    <!-- Charts (Chart.js and Canvas.js) -->
+    <script src="/js/chart.min.js"></script>
+    <script src="/js/canvasjs.min.js"></script>
+    <script src="/js/chart.StackedBar.js"></script>
+    <script src="/js/Chart.HorizontalBar.js"></script>
+    <!-- Maps -->
+    <script src="/js/d3.min.js"></script>
+    <script src="/js/topojson.min.js"></script>
+    <script src="/js/datamaps.usa.min.js"></script>
+    <!-- Load page code -->
+    <script src="/js/options.js"></script>
+    <script src="/js/refactor.js"></script>
+    <script src="/js/report.js"></script>
+    <!-- Test to PDF -->
+    <script type="text/javascript" src="/js/html2canvas-0.4.1/build/html2canvas.js"></script>
+    <script type="text/javascript" src="/js/canvas2image.js"></script>
+    <!--<script type="text/javascript" src="/js/jsPDF-0.9.0rc2/dist/jspdf.min.js"></script>-->
+    <script type="text/javascript" src="/js/canvas-toBlob.js"></script>
+    <script type="text/javascript" src="/js/jspdf.debug.js"></script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div id="layout">
+        <div class="header">
+            <div class="container">
+                <div class="col-sm-12 thelogo hidden-xs">
+                    <img class="logo" src="/img/logo.png">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <!-- Titlebar -->
+            <div class="col-sm-12 titlebar">
+                <span class="title">Audience Breakdown Report</span>
+                <span class="pull-right"><a class="download" id="btn-download" href="#">Download PDF</a></span>
+                <div class="col-sm-12 reportdetails">
+                    <div class="col-sm-2 caption removeleftpadding">Client Name
+                        <br><span data="client-name">Puma</span></div>
+                    <div class="col-sm-3 caption removeleftpadding">Estimated Size of Audience
+                        <br><span data="audience-size">1.5M</span></div>
+                    <div class="col-sm-7 caption removeleftpadding">Date Range
+                        <br><span data="date-range">Oct. 1, 2015 - Oct. 31, 2015</span></div>
+                </div>
+            </div>
+            <!-- End Titlebar -->
+            <!-- Blocked Content Areas -->
+            <div class="col-sm-12 content first">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Top Brands</div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="col-sm-12 charttitle">Share of Pageviews</div>
+                                <canvas id="SharePageviews" width="100" height="250px"></canvas>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="col-sm-12 charttitle">Share of Sales</div>
+                                <canvas id="ShareSales" width="100" height="250px"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 content">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Brand Consideration by Pageviews</div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div id="brandConsideration" style="height: 300px; width: 100%;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 content">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Shopping Behavior</div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="col-sm-12 charttitle">Top Products Purchased</div>
+                                    <div id="topProducts" class="orderedList">
+                                        <div class="col-sm-12">
+                                            <div class="col-sm-1">
+                                                <span>1.</span>
+                                            </div>
+                                            <div class="col-sm-4 photo">
+                                                <img src="/img/products/shoe.png">
+                                            </div>
+                                            <div class="col-sm-7 item">
+                                                Women’s Nike Free 5.0 Running Shoe
+                                                <div class="stars"><span class="reviewct">(1034)</span></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <div class="col-sm-1">
+                                                <span>2.</span>
+                                            </div>
+                                            <div class="col-sm-4 photo">
+                                                <img src="/img/products/shoe.png">
+                                            </div>
+                                            <div class="col-sm-7">
+                                                PUMA Suede Classic Sneakers
+                                                <div class="stars"><span class="reviewct">(456)</span></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <div class="col-sm-1">
+                                                <span>3.</span>
+                                            </div>
+                                            <div class="col-sm-4 photo">
+                                                <img src="/img/products/shoe.png">
+                                            </div>
+                                            <div class="col-sm-7">
+                                                Women’s Nike Free 5.0 Running Shoe
+                                                <div class="stars"><span class="reviewct">(923)</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="col-sm-12 charttitle">Top Interests by Pageviews</div>
+                                    <canvas id="InterestPageviews" width="100" height="250px"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 content">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Audience Demographics</div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="col-sm-12 charttitle">Behavior By Device</div>
+                                    <canvas id="BehaviorDevice" height="200px"></canvas>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="col-sm-12 charttitle">Age</div>
+                                    <canvas id="BehaviorAge" height="200px"></canvas>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="col-sm-12 charttitle">Gender</div>
+                                    <canvas id="AudienceGender"></canvas>
+                                    <div id="js-legend" class="chart-legend"></div>
+                                </div>
+                            </div>
+                            <div class="row location">
+                                <div class="col-sm-12">
+                                    <div class="col-sm-12 charttitle">Location</div>
+                                    <div class="col-sm-12" id="demoLocation" style="height:500px"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Blocked Content Areas -->
+            </div>
+            <div class="container footer">
+                <div class="col-sm-12"><span id="copyrightText" class="pull-right"></span></div>
+            </div>
+        </div>
+        <!-- /container -->
+        <!-- Placed at the end of the document so the pages load faster -->
+    </div>
+    <script type="text/javascript">
+    // function printPage() {
+    //     html2canvas(document.body, {
+    //         onrendered: function(canvas) {
+
+    //             //theCanvas = canvas;
+    //             //document.body.appendChild(canvas);
+
+    //             // Convert and download as image 
+    //             //Canvas2Image.saveAsPNG(canvas);
+
+    //             canvas.toBlob(function(blob) {
+    //                 console.log(blob);
+    //                 var url = window.URL || window.webkitURL;
+    //                 var imgSrc = url.createObjectURL(blob);
+    //                 var img = new Image();
+    //                 img.src = imgSrc;
+    //                 console.log(imgSrc);
+    //                 img.onload = function() {
+    //                     console.log(img.width);
+    //                     var pdf = new jsPDF('p', 'in', 'a4');
+    //                     pdf.addImage(img, 0, 0, img.width, img.height);
+    //                     pdf.save('report.pdf');
+    //                 };
+    //             });
+    //         }
+    //     });
+    // };
+
+    $(".download").click(function() {
+        //printPage();
+
+        $("label").css("font-family", "helvetica");
+        
+        var pdf = new jsPDF('p', 'pt', 'a4');
+
+        pdf.addHTML(document.body, function () {
+            pdf.save("test.pdf");
+        });
+
+
+
+
+    });
+    </script>
+</body>
+
+</html>
